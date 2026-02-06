@@ -1,12 +1,13 @@
-type MainRentalProp = {
-  numberRental: number;
+interface MainRentalProp {
+  rentalCount: number;
 }
 
-type OfferCardType = {
+interface OfferCardType {
   price: number;
   image: string;
   name: string;
   type: string;
-};
+  status: string;
+}
 
 export type { MainRentalProp, OfferCardType };

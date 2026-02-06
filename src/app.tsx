@@ -1,8 +1,9 @@
 import Main from './components/main';
+import { rentalCount } from './constants';
 
 function App () {
   return (
-    <Main numberRental={312} />
+    <Main rentalCount = {rentalCount}/>
   );
 }
 

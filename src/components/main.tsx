@@ -1,8 +1,15 @@
 import OfferCard from './offer-card';
-import { MainRentalProp } from '../type';
+import { MainRentalProp } from '../types';
 
+const contentCard = [
+  {id: 0, price: 120, image:'img/apartment-01.jpg', name:'luxurious apartment at great location', type: 'Apartment', status:'Premium'},
+  {id: 1, price: 80, image:'img/room.jpg', name:'Wood and stone place', type: 'Room', status:'Premium'},
+  {id: 2, price: 132, image:'img/apartment-02.jpg', name:'Canal View Prinsengracht', type: 'Apartment', status:'Premium'},
+  {id: 3, price: 180, image:'img/apartment-03.jpg', name:'Nice, cozy, warm big bed apartment', type: 'Apartment', status:'Premium'},
+  {id: 4, price: 80, image:'img/room.jpg', name:'Wood and stone place', type: 'Room', status:'Premium'}
+];
 
-function Main ({numberRental}: MainRentalProp) {
+function Main ({rentalCount }: MainRentalProp) {
   return (
     <div className="page page--gray page--main">
       <header className="header">
@@ -76,7 +83,7 @@ function Main ({numberRental}: MainRentalProp) {
           <div className="cities__places-container container">
             <section className="cities__places places">
               <h2 className="visually-hidden">Places</h2>
-              <b className="places__found">{numberRental} places to stay in Amsterdam</b>
+              <b className="places__found">{ rentalCount } places to stay in Amsterdam</b>
               <form className="places__sorting" action="#" method="get">
                 <span className="places__sorting-caption">Sort by</span>
                 <span className="places__sorting-type" tabIndex={0}>
@@ -93,11 +100,11 @@ function Main ({numberRental}: MainRentalProp) {
                 </ul>
               </form>
               <div className="cities__places-list places__list tabs__content">
-                <OfferCard price={120} image={'img/apartment-01.jpg'} name={'luxurious apartment at great location'} type={'Apartment'}/>
-                <OfferCard price={80} image={'img/room.jpg'} name={'Wood and stone place'} type={'Room'}/>
-                <OfferCard price={132} image={'img/apartment-02.jpg'} name={'Canal View Prinsengracht'} type={'Apartment'}/>
-                <OfferCard price={180} image={'img/apartment-03.jpg'} name={'Nice, cozy, warm big bed apartment'} type={'Apartment'}/>
-                <OfferCard price={80} image={'img/room.jpg'} name={'Wood and stone place'} type={'Room'}/>
+                {
+                  contentCard.map(({id, price, image, name, type, status}) => (
+                    <OfferCard key={id} price={price} image={image} name={name} type={type} status={status} />
+                  ))
+                }
               </div>
             </section>
             <div className="cities__right-section">
