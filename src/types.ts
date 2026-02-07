@@ -10,4 +10,4 @@ interface OfferCardType {
   status: string;
 }
 
-export type { MainRentalProp, OfferCardType };
+export type {MainRentalProp, OfferCardType};

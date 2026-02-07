@@ -1,6 +1,6 @@
-import { OfferCardType } from '../types';
+import {OfferCardType} from '../types';
 
-function OfferCard ({ price, image, name, type, status}: OfferCardType) {
+function OfferCard({price, image, name, type, status}: OfferCardType) {
   return (
     <article className="cities__card place-card">
       <div className="place-card__mark">
@@ -8,7 +8,7 @@ function OfferCard ({ price, image, name, type, status}: OfferCardType) {
       </div>
       <div className="cities__image-wrapper place-card__image-wrapper">
         <a href="#">
-          <img className="place-card__image" src={image} width="260" height="200" alt="Place image"/>
+          <img className="place-card__image" src={image} width="260" height="200" alt="Place image" />
         </a>
       </div>
       <div className="place-card__info">

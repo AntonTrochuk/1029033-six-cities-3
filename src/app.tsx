@@ -1,10 +1,8 @@
 import Main from './components/main';
-import { rentalCount } from './constants';
+import {RENTAL_COUNT} from './constants';
 
-function App () {
-  return (
-    <Main rentalCount = {rentalCount}/>
-  );
+function App() {
+  return <Main rentalCount={RENTAL_COUNT} />;
 }
 
 export default App;

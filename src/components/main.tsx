@@ -1,15 +1,8 @@
 import OfferCard from './offer-card';
-import { MainRentalProp } from '../types';
+import {MainRentalProp} from '../types';
+import {CONTENT_CARD} from '../constants';
 
-const contentCard = [
-  {id: 0, price: 120, image:'img/apartment-01.jpg', name:'luxurious apartment at great location', type: 'Apartment', status:'Premium'},
-  {id: 1, price: 80, image:'img/room.jpg', name:'Wood and stone place', type: 'Room', status:'Premium'},
-  {id: 2, price: 132, image:'img/apartment-02.jpg', name:'Canal View Prinsengracht', type: 'Apartment', status:'Premium'},
-  {id: 3, price: 180, image:'img/apartment-03.jpg', name:'Nice, cozy, warm big bed apartment', type: 'Apartment', status:'Premium'},
-  {id: 4, price: 80, image:'img/room.jpg', name:'Wood and stone place', type: 'Room', status:'Premium'}
-];
-
-function Main ({rentalCount }: MainRentalProp) {
+function Main({rentalCount}: MainRentalProp) {
   return (
     <div className="page page--gray page--main">
       <header className="header">
@@ -17,15 +10,14 @@ function Main ({rentalCount }: MainRentalProp) {
           <div className="header__wrapper">
             <div className="header__left">
               <a className="header__logo-link header__logo-link--active">
-                <img className="header__logo" src="img/logo.svg" alt="6 cities logo" width="81" height="41"/>
+                <img className="header__logo" src="img/logo.svg" alt="6 cities logo" width="81" height="41" />
               </a>
             </div>
             <nav className="header__nav">
               <ul className="header__nav-list">
                 <li className="header__nav-item user">
                   <a className="header__nav-link header__nav-link--profile" href="#">
-                    <div className="header__avatar-wrapper user__avatar-wrapper">
-                    </div>
+                    <div className="header__avatar-wrapper user__avatar-wrapper"></div>
                     <span className="header__user-name user__name">Oliver.conner@gmail.com</span>
                     <span className="header__favorite-count">3</span>
                   </a>
@@ -83,7 +75,7 @@ function Main ({rentalCount }: MainRentalProp) {
           <div className="cities__places-container container">
             <section className="cities__places places">
               <h2 className="visually-hidden">Places</h2>
-              <b className="places__found">{ rentalCount } places to stay in Amsterdam</b>
+              <b className="places__found">{rentalCount} places to stay in Amsterdam</b>
               <form className="places__sorting" action="#" method="get">
                 <span className="places__sorting-caption">Sort by</span>
                 <span className="places__sorting-type" tabIndex={0}>
@@ -93,18 +85,24 @@ function Main ({rentalCount }: MainRentalProp) {
                   </svg>
                 </span>
                 <ul className="places__options places__options--custom places__options--opened">
-                  <li className="places__option places__option--active" tabIndex={0}>Popular</li>
-                  <li className="places__option" tabIndex={0}>Price: low to high</li>
-                  <li className="places__option" tabIndex={0}>Price: high to low</li>
-                  <li className="places__option" tabIndex={0}>Top rated first</li>
+                  <li className="places__option places__option--active" tabIndex={0}>
+                    Popular
+                  </li>
+                  <li className="places__option" tabIndex={0}>
+                    Price: low to high
+                  </li>
+                  <li className="places__option" tabIndex={0}>
+                    Price: high to low
+                  </li>
+                  <li className="places__option" tabIndex={0}>
+                    Top rated first
+                  </li>
                 </ul>
               </form>
               <div className="cities__places-list places__list tabs__content">
-                {
-                  contentCard.map(({id, price, image, name, type, status}) => (
-                    <OfferCard key={id} price={price} image={image} name={name} type={type} status={status} />
-                  ))
-                }
+                {CONTENT_CARD.map(({id, price, image, name, type, status}) => (
+                  <OfferCard key={id} price={price} image={image} name={name} type={type} status={status} />
+                ))}
               </div>
             </section>
             <div className="cities__right-section">
