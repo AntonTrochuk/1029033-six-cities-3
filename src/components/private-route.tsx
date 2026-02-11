@@ -10,5 +10,4 @@ const PrivateRoute = ({children}: {children: ReactNode}) => {
 
   return children;
 };
-
 export default PrivateRoute;
