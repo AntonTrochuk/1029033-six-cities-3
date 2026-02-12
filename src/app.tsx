@@ -1,7 +1,7 @@
 import {Routes, Route} from 'react-router-dom';
 import Main from './components/main';
-import NotFound from './404';
-import {RENTAL_COUNT} from './constants';
+import NotFound from './components/not-found';
+import {RENTAL_COUNT, AppRoute} from './constants';
 import Login from './components/login';
 import Favorites from './components/favorites';
 import Offer from './components/offer';
@@ -10,18 +10,18 @@ import PrivateRoute from './components/private-route';
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Main rentalCount={RENTAL_COUNT} />} />
-      <Route path="/login" element={<Login />} />
+      <Route path={AppRoute.MAIN} element={<Main rentalCount={RENTAL_COUNT} />} />
+      <Route path={AppRoute.LOGIN} element={<Login />} />
       <Route
-        path="/favorites"
+        path={AppRoute.FAVORITES}
         element={
           <PrivateRoute>
             <Favorites />
           </PrivateRoute>
         }
       />
-      <Route path="/offer/:id" element={<Offer />} />
-      <Route path="*" element={<NotFound />} />
+      <Route path={AppRoute.OFFER} element={<Offer />} />
+      <Route path={AppRoute.NOT_FOUND} element={<NotFound />} />
     </Routes>
   );
 }

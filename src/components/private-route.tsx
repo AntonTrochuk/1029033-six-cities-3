@@ -1,11 +1,12 @@
-import {ReactNode} from 'react';
 import {Navigate} from 'react-router-dom';
+import {PrivateRouteType} from '../types';
+import {AppRoute} from '../constants';
 
-const PrivateRoute = ({children}: {children: ReactNode}) => {
-  const isAuthenticated: boolean = false;
+const PrivateRoute = ({children}: PrivateRouteType) => {
+  const isAuthenticated = false;
 
   if (!isAuthenticated) {
-    return <Navigate to="/login" />;
+    return <Navigate to={AppRoute.LOGIN} />;
   }
 
   return children;

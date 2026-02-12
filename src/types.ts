@@ -1,3 +1,4 @@
+import {ReactNode} from 'react';
 interface MainRentalProp {
   rentalCount: number;
 }
@@ -10,4 +11,8 @@ interface OfferCardType {
   status: string;
 }
 
-export type {MainRentalProp, OfferCardType};
+interface PrivateRouteType {
+  children: ReactNode;
+}
+
+export type {MainRentalProp, OfferCardType, PrivateRouteType};

@@ -7,3 +7,11 @@ export const CONTENT_CARD = [
   {id: 3, price: 180, image: 'img/apartment-03.jpg', name: 'Nice, cozy, warm big bed apartment', type: 'Apartment', status: 'Premium'},
   {id: 4, price: 80, image: 'img/room.jpg', name: 'Wood and stone place', type: 'Room', status: 'Premium'},
 ];
+
+export const AppRoute = {
+  MAIN: '/',
+  LOGIN: '/login',
+  FAVORITES: '/favorites',
+  OFFER: '/offer/:id',
+  NOT_FOUND: '*',
+} as const;
