@@ -1,4 +1,4 @@
-import {OfferCardType} from '../types';
+import {OfferCardType} from '../../types';
 
 function OfferCard({price, image, name, type, status}: OfferCardType) {
   return (
